@@ -1,7 +1,7 @@
 require('config.lazy')
 
 -- Make diagnostics float on hover
-vim.o.updatetime = 250
+vim.o.updatetime = 250 
 
 vim.api.nvim_create_autocmd("CursorHold", {
     callback = function()
@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("CursorHold", {
 })
 
 vim.wo.number = true            -- Enable absolute line numbers
-
+vim.opt.swapfile = false
 vim.o.smartindent = true        -- Enable smart indentation
 vim.o.autoindent = true         -- Auto indent when new lines are added
 vim.o.expandtab = true          -- Use spaces instead of tabs
@@ -26,6 +26,7 @@ vim.o.incsearch = true          -- Incrementally highlight as you type
 
 vim.o.ignorecase = true         -- Ignore case in search
 vim.o.smartcase = true          -- Respect case when at least one uppercase letter is searched
+vim.opt.conceallevel = 2        -- For obsidian
 
 vim.filetype.add({              -- Disable htmldjango for bug in treesitter
     extension = {
@@ -40,4 +41,13 @@ require('config.lsp.clangd')
 require('config.lsp.pyright')
 require('config.lsp.jsonls')
 require('config.lsp.html')
+require('config.lsp.ts_ls')
+
+
+-- Keymaps
+vim.keymap.set('n', '<leader>cc', ':CodeCompanionChat Toggle<CR>')
+vim.keymap.set('n', '<C-a>', 'ggVG')
+
+vim.cmd([[cab cc CodeCompanion]])
+
 

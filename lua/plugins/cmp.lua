@@ -2,7 +2,10 @@ return {
     'hrsh7th/nvim-cmp',
     dependencies = {
         'hrsh7th/cmp-nvim-lsp',
-        'tzachar/cmp-ai'
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-nvim-lsp-document-symbol',
+        'hrsh7th/cmp-nvim-lsp-signature-help',
     },
     config = function()
         local cmp = require 'cmp'
@@ -20,12 +23,21 @@ return {
                     { name = 'nvim_lsp' },
                 },
                 {
-                    { name = 'buffer' }, -- Mentioned in the official cmp documentation but doesn't actually seem to work. I'll keep this here.
+                    { name = 'path' },
                 },
                 {
-                    { name = 'cmp_ai' }
-                }
-            ),
+                    { name = 'buffer' },
+                },
+                {
+                    { name = 'nvim_lsp_document_symbol' }
+                },
+                {
+                    { name = 'nvim_lsp_signature_help' }
+                },
+                {
+                    { name = 'codecompanion' }
+                },
+           ),
         })
     end
 }
