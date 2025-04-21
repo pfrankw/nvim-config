@@ -33,11 +33,8 @@ return {
                 },
                 {
                     { name = 'nvim_lsp_signature_help' }
-                },
-                {
-                    { name = 'codecompanion' }
-                },
-           ),
+                }
+          ),
         })
     end
 }
